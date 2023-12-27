@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Snippets xmlns="http://schemas.microsoft.com/PowerShell/Snippets">
+  <Snippet Version="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>NewChart</Title>
+      <Description>Create New Powershell Chart</Description>
+      <Author>igor stepanushko</Author>
+    </Header>
+    <Code>
+      <Script Language="powershell" CaretOffset="4">
+        <![CDATA[
+        $datasource = Get-Process | Select -First 3
+        $Series1 = New-ChartSeries -XValueMember Name -YValueMembers PeakWorkingSet -ChartType Spline
+        New-Chart -datasource $datasource -series $Series1 -SaveAs $home\spline.png
+       ]]>
+      </Script>
+    </Code>
+  </Snippet>
+</Snippets>
