@@ -3,7 +3,7 @@
 ## Abstract
 The PSChart is a platform-dependent PowerShell module created in early 2013 as part of reporting tools for monitoring the on-premise SharePoint farms. The module requires the Windows operating system and Windows PowerShell. The code of the module is frozen.
 
-![PSChart](assets\PSChart.png)
+![PSChart](assets/PSChart.png)
 
 ## Overview
 This PowerShell module provides a convenient way to create charts based on the `System.Windows.Forms.DataVisualization.Charting` library. It offers a range of features for creating and customizing charts, including support for multiple data series, interactive formatting, saving charts in various formats, exporting to the clipboard, and more.
@@ -163,7 +163,7 @@ New-Chart -ChartType Bar `
 -dataSource (Get-Process | Select-Object -First 6) `
 -ValueMembers Name, VirtualMemorySize
 ```
-![Series1](assets\PSChartSeries1.png)
+![Series1](assets/PSChartSeries1.png)
 
 
 ### Example - Creating a chart with multiple series
@@ -188,7 +188,7 @@ $Series3 = New-ChartSeries -XValueMember 'DayOfWeek' -YValueMembers 'Server3' -C
 New-Chart -dataSource $dataSource -series $Series1, $Series2, $Series3 -SaveAs C:\temp\data.emf  -YTitle 'CPU Usage, %' -XTitle 'Time' -ChartTitle 'Average CPU Usage'
 ```
 
-![Series2](assets\PSChartSeries2.png)
+![Series2](assets/PSChartSeries2.png)
 
 
 ### Example - Creating a chart with custom data source
